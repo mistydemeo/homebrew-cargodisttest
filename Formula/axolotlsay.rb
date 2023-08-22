@@ -1,11 +1,11 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   if Hardware::CPU.type == :arm
-    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.1.25/axolotlsay-aarch64-apple-darwin.tar.gz"
-    sha256 "b4ef1d2aa0c55db88702d41072b7e7b248de77cb149e3f5c0d54262567e6ef52"
+    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.1.27/axolotlsay-aarch64-apple-darwin.tar.gz"
+    sha256 "f044e5c191600c15ad505a1edbf3286566a8e2a1571eb5c4a3259cb78d482b99"
   else
-    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.1.25/axolotlsay-x86_64-apple-darwin.tar.gz"
-    sha256 "4ee936feed86a3a8924bdca08073302f62d4552ec76a82e78ce94d90a87fd3b4"
+    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.1.27/axolotlsay-x86_64-apple-darwin.tar.gz"
+    sha256 "8684d30359c2bac1db944f772891b5fc86bb695497bc5f885e0221d3839a10f4"
   end
   license "MIT OR Apache-2.0"
 
