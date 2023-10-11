@@ -1,7 +1,7 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
-  url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.21/axolotlsay-x86_64-apple-darwin.tar.gz"
-  sha256 "1d94716fc6cd8104e1c934998a8582e72e5dfdb41f0756cae4e1bc09d248a895"
+  url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.22/axolotlsay-x86_64-apple-darwin.tar.gz"
+  sha256 "ccd67d3206739e650694ba47892fc6941182340cc78f56b34168642381421c50"
   license "MIT OR Apache-2.0"
   
   depends_on "libcue"
