@@ -1,10 +1,10 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
-  url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.27/axolotlsay-x86_64-apple-darwin.tar.gz"
-  sha256 "a920986220ed17bc78f04c4e7080f994673ecd6e13c781372f26b850ec21327e"
+  url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.33/axolotlsay-x86_64-apple-darwin.tar.gz"
+  sha256 "c7be25dfcb7ad000e078c89e908ac2ae417c4b4ec6bc6b57fc56af946370c8db"
   license "MIT OR Apache-2.0"
   
-  depends_on "libcue"
+  depends_on ""
 
   def install
     bin.install "axolotlsay"
