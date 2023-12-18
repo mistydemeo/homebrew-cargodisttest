@@ -1,14 +1,14 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
-  version "0.2.74"
+  version "0.2.77"
   on_macos do
-    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.74/axolotlsay-x86_64-apple-darwin.tar.gz"
-    sha256 "51e6e3053d4f46aff59a60abe92b7fd9b874cb85e25865f5f1e155dacda63e47"
+    url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_DrnjSE79lPLJbuyQFUceg/axolotlsay-x86_64-apple-darwin.tar.gz"
+    sha256 "429cc99e3ce0fc51dd3fce76d80735fa5d846e9d594465c7fa1203568f2aab21"
   end
   on_linux do
     on_intel do
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.74/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4c2ca156e3d3df07162ad53370bb022074301650538113f13f862ee286510994"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_DrnjSE79lPLJbuyQFUceg/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f5f3a96b9d63abb5de47e0bb322297024b68d43e1e60a3cc0800a67723123b48"
     end
   end
   license "MIT OR Apache-2.0"
