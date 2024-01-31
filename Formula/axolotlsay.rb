@@ -1,26 +1,40 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
-  version "0.2.88"
+  version "0.2.92"
   on_macos do
     on_arm do
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_iRj7heGg4wApmFT5zbJ1C/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "18b9ecdcae164191a7b80238927ed6c37e8b3f4fe4cd311016ce4b60593e1c2c"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_AT70enp8mLjoqRaJiWgTz/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "93d36e479a6924254b36b1b9ee546c2e994c642a9cd112ba45e5ceebcdf9f4d3"
     end
     on_intel do
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_iRj7heGg4wApmFT5zbJ1C/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "f977c68def2c0b8be98db9c3b76e80c53d83a1956afbcefb51ed9f1db210b699"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_AT70enp8mLjoqRaJiWgTz/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "6f147f65034d5796c8f6f9f0ced7bc46f4e8b1481b8d61c6e7653ab788e428df"
     end
   end
   on_linux do
     on_intel do
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_iRj7heGg4wApmFT5zbJ1C/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fca81385a3a47f2dc62be6afdc0221319ce093c12f9cb0b72698fa76b68bb907"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_AT70enp8mLjoqRaJiWgTz/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "67f281a08f9f05588576265f929567b79dae165044c682d8699ab8fd73e0342d"
     end
   end
   license "MIT OR Apache-2.0"
 
   def install
-    bin.install "axolotlsay"
+    on_macos do
+      on_arm do
+        bin.install "axolotlsay"
+      end
+    end
+    on_macos do
+      on_intel do
+        bin.install "axolotlsay"
+      end
+    end
+    on_linux do
+      on_intel do
+        bin.install "axolotlsay"
+      end
+    end
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
