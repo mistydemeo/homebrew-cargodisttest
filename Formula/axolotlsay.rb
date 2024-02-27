@@ -1,20 +1,20 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
-  version "0.2.104"
+  version "0.2.105"
   on_macos do
     on_arm do
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_9PbploT2IaoEFedn0IlBr/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "13bbd02dee6224e106345d3263c6a6405df7cd22d19277af7930025fd4f5e102"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_PwyJAhPOWy63qifLJHeIN/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "70c408f0f599046114afbfa12cd5d5e87a42651dc6ba8054ebadb6251d3f534e"
     end
     on_intel do
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_9PbploT2IaoEFedn0IlBr/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "b8066febb4a8e3a90f24d129ef6308c827d72eada4132c9f854cb310bb7beceb"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_PwyJAhPOWy63qifLJHeIN/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "85018b2f1820dfa714521d5f3f8551c46c5a5feb374e452e9df1f2aa95918321"
     end
   end
   on_linux do
     on_intel do
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_9PbploT2IaoEFedn0IlBr/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c7ce83f065410ce2838b715abf35275b6770f5e52ce092806fb7c2521b38f446"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_PwyJAhPOWy63qifLJHeIN/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "16a53162864900cd59b7339c8caf9ca2633e6645a3ef9fcc60b53b96f7d91c8f"
     end
   end
   license "MIT OR Apache-2.0"
