@@ -1,39 +1,34 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
-  version "0.2.114"
-  on_macos do
-    on_arm do
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.114/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "40f54d677ebcf1cd44b349f61c16764ddc457e56da4425803ff9c6c9ccb7038a"
+  homepage "https://github.com/mistydemeo/cargodisttest"
+  version "0.2.115"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.115/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "c2a562955627bf66eb95cc69bc66dd5d2344b4f671d248a494f3c8d69dde9aba"
     end
-    on_intel do
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.114/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "0a1b760dedad3caa3420c6bb561cb8a29fee59e07741756052b05a9ddc9ef438"
+    if Hardware::CPU.intel?
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.115/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "724406610f5f79bc8cb4d2b61fe5df4c2ebef2d993b9d34dbf23970a2d833910"
     end
   end
-  on_linux do
-    on_intel do
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.114/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d4d88d83f1bdc2add5aea4233429ca2183b5e76aa98769a2e17c67bc0f8f6b55"
+  if OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.115/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "5296ed72ea2dfb40a3c6cc143e3a03ab5b045a20bbee76d4cce749b47a720450"
     end
   end
   license "MIT OR Apache-2.0"
 
   def install
-    on_macos do
-      on_arm do
-        bin.install "axolotlsay"
-      end
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "axolotlsay"
     end
-    on_macos do
-      on_intel do
-        bin.install "axolotlsay"
-      end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "axolotlsay"
     end
-    on_linux do
-      on_intel do
-        bin.install "axolotlsay"
-      end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "axolotlsay"
     end
 
     # Homebrew will automatically install these, so we don't need to do that
@@ -42,6 +37,6 @@ class Axolotlsay < Formula
 
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
-    pkgshare.install *leftover_contents unless leftover_contents.empty?
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
