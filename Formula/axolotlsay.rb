@@ -1,26 +1,26 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.128"
+  version "0.2.129"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.128/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "8929ad7e8bb314e9cf500692933bb5dbef6882ec3fabfba0c3121ea4a00c63d9"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.129/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "c7e9dfcd128439497d3ec00bed65eda201392a3fbf18aa75e9d584c4a29ff097"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.128/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "b0bd48f021ee98a8a4164e27906a372f479a2d68233f307ea833d96d128ec9d7"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.129/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "0bc7e4137859daed7ad66a22e6f685d9192be1d9a3a8011585367a77112f83aa"
     end
   end
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.128/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7545ad5a8a9abbb4aa61dd7c71e1079cf890b721e0493517110a05a135feaf95"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.129/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "58ed8062fec56a1b82fe646da95ebd3dfdfe7d80ada82b1035de4b3620857982"
     end
   end
   license "MIT OR Apache-2.0"
 
-  ALIASES = {"aarch64-apple-darwin": {"axolotlsay": ["cargodisttest"]}, "x86_64-apple-darwin": {"axolotlsay": ["cargodisttest"]}, "x86_64-unknown-linux-gnu": {"axolotlsay": ["cargodisttest"]}}
+  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}}
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -29,8 +29,8 @@ class Axolotlsay < Formula
     "#{cpu}-#{os}"
   end
 
-  def install_aliases!
-    ALIASES[target_triple.to_sym].each do |source, dests|
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
       dests.each do |dest|
         bin.install_symlink bin/source.to_s => dest
       end
@@ -48,7 +48,7 @@ class Axolotlsay < Formula
       bin.install "axolotlsay"
     end
 
-    install_aliases!
+    install_binary_aliases!
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
