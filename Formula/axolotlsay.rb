@@ -1,26 +1,25 @@
 class Axolotlsay < Formula
-  desc "💬 a CLI for learning to distribute CLIs in rust"
+  desc "CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.222"
+  version "0.2.224"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_V-p2uYJveHoUhMMOCFitB/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "5a8f2b716b70d4744bea17111b8d58dc38dd746446485103122341e78bc2ef6f"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_nYq-r0a4o9nBzKU0joeUf/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "c637288ebd23ad74ea50c7e33efd11bff2211f1a66860fcae900c81e52888033"
     end
     if Hardware::CPU.intel?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_V-p2uYJveHoUhMMOCFitB/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "3f753d61da34518c65752f2cbb2a5f3cc1eb2f1f52ab01871b6027b02c5fab8a"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_nYq-r0a4o9nBzKU0joeUf/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "4c52304e11e7e18f04313f5b5e55946158385d1a48c1c7e2d6874b922a537509"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_V-p2uYJveHoUhMMOCFitB/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "6717936f9a406f07b9580eb55843f413c5f786b3f26b8243194d88a172c94145"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_nYq-r0a4o9nBzKU0joeUf/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "3fac7a1ca614d76ced800ba6ca9ec69b98dc2135ea2bf8d74059267de772276d"
   end
   license "MIT OR Apache-2.0"
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}}
+  BINARY_ALIASES = { "aarch64-apple-darwin": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {},
+"x86_64-unknown-linux-gnu": {} }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -38,15 +37,9 @@ class Axolotlsay < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "axolotlsay"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "axolotlsay"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "axolotlsay"
-    end
+    bin.install "axolotlsay" if OS.mac? && Hardware::CPU.arm?
+    bin.install "axolotlsay" if OS.mac? && Hardware::CPU.intel?
+    bin.install "axolotlsay" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
