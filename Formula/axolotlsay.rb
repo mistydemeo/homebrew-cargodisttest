@@ -1,25 +1,29 @@
 class Axolotlsay < Formula
-  desc "CLI for learning to distribute CLIs in rust"
+  desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.224"
+  version "0.2.225"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_nYq-r0a4o9nBzKU0joeUf/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "c637288ebd23ad74ea50c7e33efd11bff2211f1a66860fcae900c81e52888033"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_FAwVGR5eJlwqXFEEC_8wG/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "a1cff1d4c8cb722e89017088e126966b22092ec84356551bb058792d4afa8181"
     end
     if Hardware::CPU.intel?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_nYq-r0a4o9nBzKU0joeUf/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "4c52304e11e7e18f04313f5b5e55946158385d1a48c1c7e2d6874b922a537509"
+      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_FAwVGR5eJlwqXFEEC_8wG/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "2126e6e4d096d206341aa671ae435f6d910314be59fdbea71cc365ee82b3e1f4"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_nYq-r0a4o9nBzKU0joeUf/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "3fac7a1ca614d76ced800ba6ca9ec69b98dc2135ea2bf8d74059267de772276d"
+    url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_FAwVGR5eJlwqXFEEC_8wG/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "336ea45f0d179a16eb6730bf0b6e21fc4fae1ff866ae611e1c1ce63872ac99e6"
   end
-  license "MIT OR Apache-2.0"
+  license any_of: ["MIT", "Apache-2.0"]
 
-  BINARY_ALIASES = { "aarch64-apple-darwin": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {},
-"x86_64-unknown-linux-gnu": {} }.freeze
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":     {},
+    "x86_64-apple-darwin":      {},
+    "x86_64-pc-windows-gnu":    {},
+    "x86_64-unknown-linux-gnu": {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
