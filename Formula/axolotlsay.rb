@@ -1,35 +1,28 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.280"
+  version "0.2.282"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.280/axolotlsay-aarch64-apple-darwin.tar.xz"
-      sha256 "6abfa93e057de8edc13617af59e738e8b5c16b1db244ff69437f91e005699d66"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.282/axolotlsay-aarch64-apple-darwin.tar.xz"
+      sha256 "60457b92139d5a7a085213fc016db672480e48922cf7b026eaa0c79bb3ebf00a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.280/axolotlsay-x86_64-apple-darwin.tar.xz"
-      sha256 "0bf65c8f99819e84295f828b52b188d342121672c8e4e7087335fa5c49a99233"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.282/axolotlsay-x86_64-apple-darwin.tar.xz"
+      sha256 "1bbaf25f616275ea03b9227166bd52607d6d1b611a5d31103680a51563c734a4"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.280/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1d0b53f07434241e0b6fcb10e0d96a58dd7aa8fabec6552fb7fb040cd147f3fc"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.280/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d13f55cc70094f52eae5e14e5d85f0759aceb67295ca1e5106e420cdf1ed9ff3"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.282/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "a919d23a6956e21f91ec9d82a1e697cfd542b669310cb7b16317a543af0ac41f"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":     {},
+    "x86_64-apple-darwin":      {},
+    "x86_64-pc-windows-gnu":    {},
+    "x86_64-unknown-linux-gnu": {},
   }.freeze
 
   def target_triple
@@ -50,7 +43,6 @@ class Axolotlsay < Formula
   def install
     bin.install "axolotlsay" if OS.mac? && Hardware::CPU.arm?
     bin.install "axolotlsay" if OS.mac? && Hardware::CPU.intel?
-    bin.install "axolotlsay" if OS.linux? && Hardware::CPU.arm?
     bin.install "axolotlsay" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
