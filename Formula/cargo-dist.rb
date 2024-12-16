@@ -5,21 +5,21 @@ class CargoDist < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.90.0/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "5b61f91eb2204d0d01dd335ccc10b9248af65b7512e50c68a25e6bef47ee382f"
+      sha256 "0e6a499b1e885d65d593362b360bff3d4f631d21a3eb3139620ca55d43ad6d8f"
     end
     if Hardware::CPU.intel?
       url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.90.0/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "741a12d7674b35821734aa741fbba8242c252b89f48b415ca5021a840744b613"
+      sha256 "93097c781f702e0e346d72d2e32304eb5263d82a38ff4c5a86ce1cd028cd2997"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.90.0/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d0bb3bc81c2832f9f8a28f34a87c47c6dadb6b9697d9d4f06f588378cc7016a5"
+      sha256 "57464a95c4016fc47de0302e0a4843b680d379f9fcbf58d074d18d39e2bdce9d"
     end
     if Hardware::CPU.intel?
       url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.90.0/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "51c40d49f1c104aaf04081d9425ea2212d59492fe92a0b8b65a5a576332465f1"
+      sha256 "a9a42361530c749d8ee97525c463be0caa5c08271feaed3a31539663dcb993eb"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
