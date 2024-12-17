@@ -1,25 +1,25 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://github.com/mistydemeo/cargo-dist"
-  version "0.91.0"
+  version "0.92.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.91.0/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "63fbeb2780ba0e8465393dcbdb5766d7ecd00b58f3a366e842812d3a0d1dc05c"
+      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.92.0/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "396b7a70008e773aa10f1a4e1303d0735ce1006fa93ce80efb124f20e609aa34"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.91.0/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "3341285d683affeb4a02da0cad6fdb9c87c838f73ea57ca2927d0ee71822c744"
+      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.92.0/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "b100aea9559984e51f132be0f230e63d2a262c56b3a2c3ea3d017c3978a6ef7d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.91.0/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2b978ab6c6642384c5b8071a5f8948bbcb4938515a90dc3eca5405cca13235ee"
+      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.92.0/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ba21cce040b32e0dfbc1036b1c529e48cffc7838159794644d11adb8ff5bb9d4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.91.0/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "29968d5bf1042c99192b9b4862b695e6a9987defeb917e9146aebd563b7bf26e"
+      url "https://github.com/mistydemeo/cargo-dist/releases/download/v0.92.0/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6b0a55264461812601474fe5c26b4f9d30299cd3038e761366f4e4e1b096a702"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
