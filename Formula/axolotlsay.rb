@@ -1,20 +1,20 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.323"
+  version "0.2.324"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_EX0aF_zNC5yZrTxmo9Z5u/axolotlsay-aarch64-apple-darwin.tar.xz"
-      sha256 "6c7a374e95379464ce2a7323fb723b8d77a51a0365f5324dc569d5aa8ee13627"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.324/axolotlsay-aarch64-apple-darwin.tar.xz"
+      sha256 "254008bd69a0ce47e4c8f80aaa7b9087f34f314b816d4a59b3039aceca4d43f4"
     end
     if Hardware::CPU.intel?
-      url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_EX0aF_zNC5yZrTxmo9Z5u/axolotlsay-x86_64-apple-darwin.tar.xz"
-      sha256 "bea2570f0daecab69d9acfb3c9e9b40efcecf7b9f71c5c5898852a3657c8cda8"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.324/axolotlsay-x86_64-apple-darwin.tar.xz"
+      sha256 "cbcc01ea290067342fda15c16c89742a01f6109c15298324e56a1a668364c679"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://mistydemeo.artifacts.axodotdev.host/axolotlsay/ax_EX0aF_zNC5yZrTxmo9Z5u/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "e04f16865d29b0e4c4543b38115d77d81049a2bdc94c68f519bc2b99fe6fc3b8"
+    url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.324/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "9b527a92e8a26ab7c0eaa7f7df366676140eba195b997df625d178b9a004e3cf"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
