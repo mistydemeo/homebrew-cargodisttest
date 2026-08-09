@@ -1,36 +1,39 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.367"
+  version "0.2.369"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.367/axolotlsay-aarch64-apple-darwin.tar.xz"
-      sha256 "e9823654a51b2ab2f4101375074448aa30b9285283a4490af842a17f5a7925a1"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-aarch64-apple-darwin.tar.xz"
+      sha256 "b0777de471a245596d519aa32a8f34b24cbf2296d68e154e2eb44e93c23734d2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.367/axolotlsay-x86_64-apple-darwin.tar.xz"
-      sha256 "18875e985d210a48ea4c20f48307f076a11b40787b8e091899bedce28822db34"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-x86_64-apple-darwin.tar.xz"
+      sha256 "29886b87363f20f6737b063225ac15b4f33117fe497e12bdd443a05dc824fa4e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.367/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9363d909f754d4d3542eeee32027b2987c1e627f22169639c2a16d056f04d0a3"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e0cdb888007e395aa1a5e38aa73fe7469eee182ff2c7024322406c290ccbfc3c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.367/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "44f7f2a34c1fe76752459eabc399fb5d40ea677d3e3f88986e321d3fddd2da59"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6fcf5a674f7fa4024f63f9b10fc52b03c9c9f4696a4e160b684cc68ed0cf66a7"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-pc-windows-gnu":    {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":          {},
+    "aarch64-pc-windows-gnu":        {},
+    "aarch64-unknown-linux-gnu":     {},
+    "arm-unknown-linux-gnueabihf":   {},
+    "armv7-unknown-linux-gnueabi":   {},
+    "armv7-unknown-linux-gnueabihf": {},
+    "x86_64-apple-darwin":           {},
+    "x86_64-pc-windows-gnu":         {},
+    "x86_64-unknown-linux-gnu":      {},
   }.freeze
 
   def target_triple
