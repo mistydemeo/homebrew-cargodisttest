@@ -1,25 +1,25 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.369"
+  version "0.2.370"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-aarch64-apple-darwin.tar.xz"
-      sha256 "b0777de471a245596d519aa32a8f34b24cbf2296d68e154e2eb44e93c23734d2"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.370/axolotlsay-aarch64-apple-darwin.tar.xz"
+      sha256 "ae74ea55d5ad69d8bd823191717793b4e73d0f9f6586ba2dc5876d086140114c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-x86_64-apple-darwin.tar.xz"
-      sha256 "29886b87363f20f6737b063225ac15b4f33117fe497e12bdd443a05dc824fa4e"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.370/axolotlsay-x86_64-apple-darwin.tar.xz"
+      sha256 "7aa0a43ed9fe12d84f53cbcbe3d6805a2d64f0de16f61252275f450f3b5b7895"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e0cdb888007e395aa1a5e38aa73fe7469eee182ff2c7024322406c290ccbfc3c"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.370/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "eba4e03574812a577d68f6c861174fe795174fde082941524006137673eb0e48"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.369/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6fcf5a674f7fa4024f63f9b10fc52b03c9c9f4696a4e160b684cc68ed0cf66a7"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.370/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "0eb31db8fc400d82732c692a1a55364c8e9fa3d591899e34e580b136fe721d08"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -52,10 +52,18 @@ class Axolotlsay < Formula
   end
 
   def install
-    bin.install "axolotlsay" if OS.mac? && Hardware::CPU.arm?
-    bin.install "axolotlsay" if OS.mac? && Hardware::CPU.intel?
-    bin.install "axolotlsay" if OS.linux? && Hardware::CPU.arm?
-    bin.install "axolotlsay" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "axolotlsay"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "axolotlsay"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "axolotlsay"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "axolotlsay"
+    end
 
     install_binary_aliases!
 
