@@ -1,25 +1,25 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/mistydemeo/cargodisttest"
-  version "0.2.383"
+  version "0.2.384"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.383/axolotlsay-aarch64-apple-darwin.tar.xz"
-      sha256 "829cc364dc5e65a7d15afdb5a1241ea78d89ee6a5812dc124523a770d5371f06"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.384/axolotlsay-aarch64-apple-darwin.tar.xz"
+      sha256 "6753dd5625d21f24f2e27abeb64448110c2d1bdb5b1075b6db34fcab5f569738"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.383/axolotlsay-x86_64-apple-darwin.tar.xz"
-      sha256 "56808e9e3b1fffae4aee55dc4aece3101c4c88cc6fb0fdb58be9b9d6b6b39ffe"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.384/axolotlsay-x86_64-apple-darwin.tar.xz"
+      sha256 "a4b80b8ad2ac57a37b25a8be8ff0e325edd1b84c7f3cf2b7842883ad96e694d9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.383/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ac3f61ccab98831828632e2765fbd3209f99f0f3af4c6fa69b79d4e55ad6a800"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.384/axolotlsay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e474becd382444459a5014b1a59b3a92f7cb6da430b7da88fbeed6818cca8604"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.383/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9360f5eea992b335a0a0c98f091ef0f13b6ca41779813896e6a02d769e80add0"
+      url "https://github.com/mistydemeo/cargodisttest/releases/download/v0.2.384/axolotlsay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "cc0dde01431bb1f14febdaaf55d56866221d4797125963c251f272e8be429cfe"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
